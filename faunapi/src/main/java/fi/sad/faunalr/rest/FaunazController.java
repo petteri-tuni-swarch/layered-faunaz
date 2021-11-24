@@ -38,5 +38,14 @@ public class FaunazController {
         return new ResponseEntity<>("Fauna Service status: " + value, HttpStatus.OK);
     }
 
+    /* curl http://localhost:8471/sample-api/1.0/id/10 */
+    @RequestMapping("sample-api/1.0/ducks/{id}")
+    public ResponseEntity<?> findDuck(@PathVariable String id){
+        String responseText = "Duck info for " + id + ":\n" + FaunaService.instance().getDuckInfo(id) + "\n";
+        return new ResponseEntity<>(responseText, HttpStatus.OK);
+    }
+
+
+
 
 }

@@ -11,8 +11,9 @@
     <name>SW Architecture - Layered Fauna</name>
 
     <modules>
-        <module>faunapi</module>
+        <module>faunaduck</module>
         <module>faunasvc</module>
+        <module>faunapi</module>
     </modules>
 
     <build>

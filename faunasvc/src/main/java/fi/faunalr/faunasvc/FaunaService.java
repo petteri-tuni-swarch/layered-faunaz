@@ -1,5 +1,10 @@
 package fi.faunalr.faunasvc;
 
+import fi.faunalr.faunaduck.Duck;
+import fi.faunalr.faunaduck.MallardDuck;
+import fi.faunalr.faunaduck.RedheadDuck;
+import fi.faunalr.faunaduck.RubberDuck;
+
 public class FaunaService {
 
     private static FaunaService uniqueInstance = new FaunaService();
@@ -13,16 +18,22 @@ public class FaunaService {
         return "Service Here";
     }
 
-    /*
-    public Duck getDuck (String type) {
+    public String getDuckInfo (String type) {
+        Duck localDuck;
         if (type.equals("rubber")) {
-            return new RubberDuck();
+            localDuck = new RubberDuck();
         } else if (type.equals("red")) {
-            return new RedheadDuck();
+            localDuck = new RedheadDuck();
+        } else {
+            localDuck = new MallardDuck();
         }
-        return new MallardDuck();
+        String duckInfo = "Looks like: " +localDuck.display() + "\n";
+        duckInfo += "Flies " +localDuck.performFly() + "\n";
+        duckInfo += "Quacks " +localDuck.performQuack() + "\n";
+
+        return duckInfo;
     }
-*/
+
 
 
 }
