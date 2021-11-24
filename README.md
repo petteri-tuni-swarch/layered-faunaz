@@ -9,12 +9,13 @@ Git
 
 ## Clone and build
 ````
-git clone https://github.com/petteri-tuni-swarch/java-springboot-rest-tla.git
+git clone <repo>
+cd faunapi
 mvn install
 ````
 
 ## Start the service
-````java -jar target/bare-rest-0.0.2-SNAPSHOT.jar````
+````java -jar target/<jar>````
 
 ## Start the service in continuous development deploy mode (needs some IDE config to work properly)
 ````mvn spring-boot:run````
