@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import fi.faunalr.faunasvc.*;
+
 /**
  * If bare connection is not ok service will fail to start
  */
@@ -26,4 +28,15 @@ public class FaunazController {
     public ResponseEntity<?> infoService(){
         return new ResponseEntity<>("Sample API service 1.0", HttpStatus.OK);
     }
+
+    /* curl http://localhost:8471/sample-api/1.0/svc */
+    @RequestMapping("sample-api/1.0/svc")
+    public ResponseEntity<?> serviceStatus (){
+
+        String value = FaunaService.instance().getServiceInfo();
+
+        return new ResponseEntity<>("Fauna Service status: " + value, HttpStatus.OK);
+    }
+
+
 }
